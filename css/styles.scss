@@ -1,0 +1,214 @@
+// colors
+
+$mainBG: hsl(0, 0%, 92%);
+$black: hsl(0, 0%, 0%);
+$darkgrey: #A4A4A4;
+$lightgrey: #EBEBEB;
+
+// font
+
+$font: "Atkinson Hyperlegible", serif;
+
+// styling
+
+$mb: 30px;
+
+*{
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: $font;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style-type: none;
+}
+
+.main-container{
+    background-color: $mainBG;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.left-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    width: 30vw;
+    min-width: 400px;
+
+    .navbar{
+        display: flex;
+        gap: 10px;
+        li{
+            display: flex;
+            width: 150px;
+            height: 55px;
+            padding: 6px 9px;
+            align-items: flex-end;
+            background-color: $lightgrey;
+            font-size: clamp(0.8rem, 1vw, 1.2rem);
+            border-radius: 10px;
+            border: 1px solid $darkgrey;
+            cursor: pointer;
+        }
+
+        .information-nav{
+            width: 120px;
+            color: $darkgrey;
+        }
+
+        .contact-nav{
+            width: 120px;
+            color: $darkgrey;
+        }
+    }
+
+    .description{
+        width: 100%;
+        p{
+            width: 100%;
+            letter-spacing: 20%;
+            text-align: justify;
+            line-height: 1.5;
+            font-size: clamp(0.6rem, 0.8vw, 1.2rem);
+
+            span{
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .image-content{
+        width: 100%;
+        height: 70vh;
+        position: relative;
+        .image-placeholder{
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .hover-me{
+            position: absolute;
+            color: white;
+            top: 50%;
+            left: 35%;
+            cursor: pointer;
+            font-size: 1.4rem;
+            display: block;
+        }
+    }
+}
+
+// right - container
+
+.right-container{
+    height: 100%;
+    width: 75vw;
+
+    .name-tag{
+        display: flex;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 13vh;
+
+        img{
+            width: 50vw;
+            height: auto;
+            margin-left: auto;
+        }
+    }
+
+    .work{
+        width: 100%;
+        position: relative;
+
+        .radio-img-placeholder{
+            position: absolute;
+            z-index: 20;
+
+            top: 0;
+            left: 0;
+            height: 70vh;
+            width: 100%;
+            display: none;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        
+        .work-list{
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            max-height: 70vh;
+            overflow-y: scroll;
+
+            li{
+                display: flex;
+                justify-content: left;
+                font-size: 1vw;
+                text-transform: uppercase;
+                padding-bottom: 5px;
+                border-bottom: 2px dotted $black;
+
+                .title{
+                    cursor: pointer;
+                    width: 20vw;
+                    &:hover{
+                        color: $darkgrey;
+                    }
+                }
+
+                .type{
+                    width: 20vw;
+                }
+
+                .location{
+                    width: 20vw;
+                }
+
+                .year{
+                    margin-left: auto;
+                }
+            }
+
+            .context{
+                color: $darkgrey;
+                border-bottom: 1px solid;
+
+                .title{
+                    cursor: default;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
