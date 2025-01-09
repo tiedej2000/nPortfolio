@@ -18,7 +18,8 @@ body.dark-mode {
   margin: 0;
   padding: 0;
   line-height: 1;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -39,6 +40,8 @@ li {
   background-color: var(--mainBG);
   width: 100vw;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 20px;
   padding: 20px;
@@ -47,25 +50,36 @@ li {
 }
 
 .description.blurred {
-  filter: blur(20px);
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
 }
 
 .image-content.blurred {
-  filter: blur(20px);
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
 }
 
 .right-container.blurred {
-  filter: blur(20px);
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
 }
 
 .left-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: auto;
   width: 30vw;
   min-width: 400px;
 }
+
 .left-container #socials {
   position: absolute;
   top: 0;
@@ -77,14 +91,22 @@ li {
   display: none;
   place-content: center;
 }
+
 .left-container #socials .social-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 10px;
 }
+
 .left-container #socials .social-list li {
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   width: 200px;
   padding: 6px 9px;
   height: 65px;
@@ -92,56 +114,77 @@ li {
   border-radius: 10px;
   border: 1px solid var(--black);
 }
+
 .left-container #socials.active {
+  display: -ms-grid;
   display: grid;
-  filter: blur(0px);
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
 }
+
 .left-container .navbar {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 10px;
   position: relative;
   z-index: 25;
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
+
 .left-container .navbar li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 12vw;
-  height: 65px;
+  height: 55px;
   padding: 6px 9px;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   background-color: var(--lightgrey);
   font-size: clamp(0.8rem, 0.9vw, 1rem);
   border-radius: 10px;
   border: 1px solid var(--darkgrey);
   cursor: pointer;
 }
+
 .left-container .navbar .information-nav {
   width: 6vw;
   color: var(--darkgrey);
 }
+
 .left-container .navbar .information-nav:hover {
   color: var(--navblack);
 }
+
 .left-container .navbar .socials-nav {
   width: 6vw;
   color: var(--darkgrey);
 }
+
 .left-container .navbar .socials-nav:hover {
   color: var(--navblack);
 }
+
 .left-container .navbar #toggle-dark-mode {
   width: 6vw;
   color: var(--darkgrey);
 }
+
 .left-container .navbar #toggle-dark-mode:hover {
   color: var(--navblack);
 }
+
 .left-container .description {
   width: 100%;
   color: var(--black);
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
 .left-container .description p {
   width: 100%;
   letter-spacing: 20%;
@@ -150,55 +193,70 @@ li {
   font-size: clamp(0.6rem, 0.8vw, 1.2rem);
   overflow: hidden;
 }
+
 .left-container .description p span {
   font-weight: 700;
   cursor: pointer;
 }
+
 .left-container .image-content {
   width: 100%;
   height: 70vh;
   position: relative;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
 .left-container .image-content .image-placeholder {
   width: 100%;
   height: 100%;
 }
+
 .left-container .image-content .image-placeholder img {
   width: 100%;
   height: 100%;
 }
+
 .left-container .image-content .hover-me {
   position: absolute;
   color: white;
   top: 50%;
-  left: 35%;
+  left: 42%;
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: 0.9vw;
   display: block;
 }
 
 .right-container {
   height: 100%;
   width: 75vw;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
 .right-container .name-tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   margin-bottom: 13vh;
 }
+
 .right-container .name-tag img {
   width: 50vw;
   height: auto;
   margin-left: auto;
 }
+
 .right-container .work {
   width: 100%;
   position: relative;
 }
+
 .right-container .work .radio-img-placeholder {
   position: absolute;
   z-index: 20;
@@ -208,48 +266,68 @@ li {
   width: 100%;
   display: none;
 }
+
 .right-container .work .radio-img-placeholder img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
+
 .right-container .work .work-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 2vh;
   max-height: 70vh;
   overflow-y: scroll;
   color: var(--black);
 }
+
 .right-container .work .work-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: left;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   font-size: 1vw;
   text-transform: uppercase;
   padding-bottom: 5px;
   border-bottom: 2px dotted var(--black);
 }
+
 .right-container .work .work-list li .title {
   cursor: pointer;
   width: 20vw;
 }
+
 .right-container .work .work-list li .title:hover {
   color: var(--darkgrey);
 }
+
 .right-container .work .work-list li .type {
   width: 20vw;
 }
+
 .right-container .work .work-list li .location {
   width: 20vw;
 }
+
 .right-container .work .work-list li .year {
   margin-left: auto;
 }
+
 .right-container .work .work-list .context {
   color: var(--darkgrey);
   border-bottom: 1px solid;
 }
+
 .right-container .work .work-list .context .title {
   cursor: default;
-}/*# sourceMappingURL=styles.css.map */
+}
+/*# sourceMappingURL=styles.css.map */

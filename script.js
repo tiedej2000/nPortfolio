@@ -1,56 +1,46 @@
-const venedigElement = document.querySelector('#venedig')
-const myFaceElement = document.querySelector('#myface')
-const tarnungElement = document.querySelector('#tarnung')
-const grafittiElement = document.querySelector('#grafitti')
+const imageSet2 = [
+    { element: document.querySelector('#venedig'), image: './images/venedig.png' },
+    { element: document.querySelector('#myface'), image: './images/myface.png' },
+    { element: document.querySelector('#tarnung'), image: './images/tarnung.png' },
+    { element: document.querySelector('#grafitti'), image: './images/grafitii.png' },
+    { element: document.querySelector('#untitled1'), image: './images/untitled1.png' },
+    { element: document.querySelector('#späher'), image: './images/späher.png' },
+    { element: document.querySelector('#gertrud'), image: './images/gertrud.png' },
+    { element: document.querySelector('#untitled2'), image: './images/untitled2.png' },
+    { element: document.querySelector('#nostalgisch'), image: './images/nostalgisch.png' },
+    { element: document.querySelector('#recently'), image: './images/recently.png' },
+    { element: document.querySelector('#portrait'), image: './images/portrait.png' },
+    { element: document.querySelector('#schattengestalt'), image: './images/schattengestalt.png' },
+    { element: document.querySelector('#werkschau'), image: './images/werkschau.png' },
+    { element: document.querySelector('#strasbourg'), image: './images/strasbourg.png' }
+];
 
-const placeHolder = document.querySelector('.image-placeholder img')
-const hoverText = document.querySelector('.hover-me')
+const placeHolder = document.querySelector('.image-placeholder img');
+const hoverText = document.querySelector('.hover-me');
 
-venedigElement.addEventListener('mouseover', () => {
-    placeHolder.src = './images/venedig.png'
-    hoverText.style.display = 'none';
-})
+imageSet2.forEach(({ element, image }) => {
+    element.addEventListener('mouseover', () => {
+        placeHolder.src = image;
+        hoverText.style.display = 'none';
+    });
 
-venedigElement.addEventListener('mouseout', () => {
-    placeHolder.src = './images/ascii2.gif'
-    hoverText.style.display = 'block';
-})
+    element.addEventListener('mouseout', () => {
+        placeHolder.src = './images/ascii2.gif';
+        hoverText.style.display = 'block';
+    });
+});
 
-// 
+const preloadImages = (imageSet) => {
+    imageSet2.forEach(({ image }) => {
+        const img = new Image();
+        img.src = image;
+    });
+};
 
-myFaceElement.addEventListener('mouseover', () => {
-    placeHolder.src = './images/myface.png'
-    hoverText.style.display = 'none';
-})
-
-myFaceElement.addEventListener('mouseout', () => {
-    placeHolder.src = './images/ascii2.gif'
-    hoverText.style.display = 'block';
-})
-
-// 
-
-tarnungElement.addEventListener('mouseover', () => {
-    placeHolder.src = './images/tarnung.png'
-    hoverText.style.display = 'none';
-})
-
-tarnungElement.addEventListener('mouseout', () => {
-    placeHolder.src = './images/ascii2.gif'
-    hoverText.style.display = 'block';
-})
-
-//
-
-grafittiElement.addEventListener('mouseover', () => {
-    placeHolder.src = './images/graffiti.png'
-    hoverText.style.display = 'none';
-})
-
-grafittiElement.addEventListener('mouseout', () => {
-    placeHolder.src = './images/ascii2.gif'
-    hoverText.style.display = 'block';
-})
+// Preload images when the page loads
+window.addEventListener('load', () => {
+    preloadImages(imageSet2);
+});
 
 
 
