@@ -262,12 +262,15 @@ li{
                 padding-bottom: 5px;
                 border-bottom: 2px dotted var(--black);
 
-                .title{
+                a{
                     cursor: pointer;
-                    width: 20vw;
                     &:hover{
                         color: var(--darkgrey);
                     }
+                }
+
+                .title{
+                    width: 20vw;
                 }
 
                 .type{

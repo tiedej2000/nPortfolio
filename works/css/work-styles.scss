@@ -45,6 +45,7 @@ li{
     list-style-type: none;
 }
 
+
 .main-container{
     background-color: var(--mainBG);
     width: 100vw;
@@ -141,10 +142,16 @@ li{
     height: auto;
     justify-content: space-between;
     width: 30vw;
-    min-width: 400px;
+    min-width: 300px;
 
     .description{
         visibility: hidden;
+        max-width: 15vw;
+        font-size: clamp(0.4rem, 0.6vw, 0.8rem);
+    }
+
+    .description.active{
+        visibility: visible;
     }
 
     .buttons{
@@ -160,7 +167,9 @@ li{
             height: 3vw;
             display: grid;
             place-content: center;
-
+            font-size: clamp(0.6rem, 1vw, 1rem);
+            cursor: pointer;
+            user-select: none;
         }
 
         .title{
@@ -176,3 +185,66 @@ li{
     }
 }
 
+.right-container{
+    height: auto;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh;
+    transition: all 0.3s ease;
+
+    .image-content{
+        width: 692px;
+        height: 462px;
+        transition: all 0.3s ease;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .buttons{
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        button{
+            border-style: none;
+            border-radius: 10px;
+            border: 1px solid var(--darkgrey);
+            background-color: var(--lightgrey);
+            padding: 6px 9px;
+            height: 3vw;
+            width: 3vw;
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+
+            svg{
+                transform: scale(0.8);
+                fill: var(--darkgrey);
+            }
+
+            &:hover svg {
+                fill: black;
+            }
+        }
+
+        .counter{
+            margin-left: auto;
+            height: 3vw;
+            width: 3vw;
+            padding: 6px 9px;
+            display: grid;
+            place-content: center;
+            border-radius: 10px;
+            border: 1px solid var(--darkgrey);
+        }
+    }
+}
+
+// blur effect
+
+.right-container.blurred{
+    filter: blur(20px);
+}

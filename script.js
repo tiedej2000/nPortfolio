@@ -30,13 +30,6 @@ imageSet2.forEach(({ element, image }) => {
     });
 });
 
-const preloadImages = (imageSet) => {
-    imageSet2.forEach(({ image }) => {
-        const img = new Image();
-        img.src = image;
-    });
-};
-
 // hover me
 
 const hoverMe = document.querySelector('.hover-me');

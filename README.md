@@ -5,10 +5,6 @@
 
 to do 
 
-dark mode
+works
 
-navigation
-
-images
-
-loading scrample animation?
+dark mode overhaul
