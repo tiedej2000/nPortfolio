@@ -37,14 +37,6 @@ const preloadImages = (imageSet) => {
     });
 };
 
-// Preload images when the page loads
-window.addEventListener('load', () => {
-    preloadImages(imageSet2);
-});
-
-
-
-
 // hover me
 
 const hoverMe = document.querySelector('.hover-me');

@@ -1,0 +1,212 @@
+:root {
+  --mainBG: hsl(0, 0%, 92%);
+  --black: hsl(0, 0%, 0%);
+  --darkgrey: #A4A4A4;
+  --lightgrey: #EBEBEB;
+  --navblack: hsl(0, 0%, 0%);
+}
+
+body.dark-mode {
+  --mainBG: hsl(0, 0%, 0%);
+  --black: hsl(0, 0%, 100%);
+  --darkgrey: #A4A4A4;
+  --lightgrey: #ffffff;
+  --navblack: hsl(0, 0%, 0%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Atkinson Hyperlegible", serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--navblack);
+}
+
+li {
+  list-style-type: none;
+}
+
+.main-container {
+  background-color: var(--mainBG);
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+#socials {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 10;
+  display: none;
+  place-content: center;
+}
+
+#socials .social-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+#socials .social-list li {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 200px;
+  padding: 6px 9px;
+  height: 65px;
+  color: var(--black);
+  border-radius: 10px;
+  border: 1px solid var(--black);
+}
+
+#socials.active {
+  display: -ms-grid;
+  display: grid;
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+}
+
+.navbar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  position: relative;
+  z-index: 25;
+  -webkit-filter: none;
+          filter: none;
+}
+
+.navbar li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 12vw;
+  height: 55px;
+  padding: 6px 9px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-color: var(--lightgrey);
+  font-size: clamp(0.8rem, 0.9vw, 1rem);
+  border-radius: 10px;
+  border: 1px solid var(--darkgrey);
+  cursor: pointer;
+}
+
+.navbar .information-nav {
+  width: 6vw;
+  color: var(--darkgrey);
+}
+
+.navbar .information-nav:hover {
+  color: var(--navblack);
+}
+
+.navbar .socials-nav {
+  width: 6vw;
+  color: var(--darkgrey);
+}
+
+.navbar .socials-nav:hover {
+  color: var(--navblack);
+}
+
+.navbar #toggle-dark-mode {
+  width: 6vw;
+  color: var(--darkgrey);
+}
+
+.navbar #toggle-dark-mode:hover {
+  color: var(--navblack);
+}
+
+.left-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 30vw;
+  min-width: 400px;
+}
+
+.left-container .description {
+  visibility: hidden;
+}
+
+.left-container .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  font-size: clamp(0.6rem, 0.8vw, 1rem);
+}
+
+.left-container .buttons .expand-button {
+  border-radius: 10px;
+  border: 1px solid var(--darkgrey);
+  background-color: var(--lightgrey);
+  width: 3vw;
+  height: 3vw;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.left-container .buttons .expand-button span {
+  cursor: pointer;
+}
+
+.left-container .buttons .expand-button span:active {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.left-container .buttons .title {
+  height: 3vw;
+  width: auto;
+  border-radius: 10px;
+  border: 1px solid var(--darkgrey);
+  background-color: var(--lightgrey);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1vw;
+}
+/*# sourceMappingURL=work-styles.css.map */
