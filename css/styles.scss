@@ -12,8 +12,8 @@ body.dark-mode{
    --mainBG: hsl(0, 0%, 0%);
    --black: hsl(0, 0%, 100%);
    --darkgrey: #A4A4A4;
-   --lightgrey: #ffffff;
-   --navblack: hsl(0, 0%, 0%);
+   --lightgrey: black;
+   --navblack: white;
 }
 
 // font
@@ -76,7 +76,7 @@ li{
     justify-content: space-between;
     height: auto;
     width: 30vw;
-    min-width: 400px;
+    min-width: 300px;
 
     #socials{
         position: absolute;
@@ -121,8 +121,8 @@ li{
         filter: none;
         li{
             display: flex;
-            width: 12vw;
             height: 55px;
+            width: 10vw;
             padding: 6px 9px;
             align-items: flex-end;
             background-color: var(--lightgrey);
@@ -133,7 +133,7 @@ li{
         }
 
         .information-nav{
-            width: 6vw;
+            width: 20%;
             color: var(--darkgrey);
             &:hover{
                 color: var(--navblack);
@@ -141,7 +141,7 @@ li{
         }
 
         .socials-nav{
-            width: 6vw;
+            width: 20%;
             color: var(--darkgrey);
             &:hover{
                 color: var(--navblack);
@@ -149,7 +149,7 @@ li{
         }
 
         #toggle-dark-mode{
-            width: 6vw;
+            width: 20%;
             color: var(--darkgrey);
             &:hover{
                 color: var(--navblack);
@@ -208,7 +208,7 @@ li{
 
 .right-container{
     height: 100%;
-    width: 75vw;
+    width: 70vw;
     transition: all 0.3s ease;
 
 
