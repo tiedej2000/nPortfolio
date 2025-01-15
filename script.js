@@ -25,7 +25,7 @@ imageSet2.forEach(({ element, image }) => {
     });
 
     element.addEventListener('mouseout', () => {
-        placeHolder.src = './images/ascii2.gif';
+        placeHolder.src = './images/ascii3.gif';
         hoverText.style.display = 'block';
     });
 });

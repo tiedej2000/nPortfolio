@@ -65,58 +65,71 @@ expandButton.addEventListener('click', () => {
 })
 
 // image content venedig
+const imageSets = {
+    venedig: [
+        { id: 1, image: './images/venedig1.png' },
+        { id: 2, image: './images/venedig2.png' },
+        { id: 3, image: './images/venedig3.png' },
+        { id: 4, image: './images/venedig4.png' },
+        { id: 5, image: './images/venedig5.png' },
+        { id: 6, image: './images/venedig6.png' },
+        { id: 7, image: './images/venedig7.png' }
+    ],
+    mfitrs: [
+        { id: 1, image: './images/mfitrs1.png' },
+        { id: 2, image: './images/mfitrs2.png' },
+        { id: 3, image: './images/mfitrs3.png' },
+        { id: 4, image: './images/mfitrs4.png' },
+        { id: 5, image: './images/mfitrs5.png' },
+        { id: 6, image: './images/mfitrs6.png' },
+        { id: 7, image: './images/mfitrs7.png' },
+        { id: 8, image: './images/mfitrs8.png' },
+        { id: 9, image: './images/mfitrs9.png' },
+        { id: 10, image: './images/mfitrs10.png' }
+    ],
+    tarnung:[
+        { id: 1, image: './images/tarnung1.png' },
+        { id: 2, image: './images/tarnung2.png' }
+    ],
+};
 
-imageSetVenedig = [
-    {
-        id:1, image: './images/venedig1.png'
-    },
-    {
-        id:2, image: './images/venedig2.png'
-    },
-    {
-        id:3, image: './images/venedig3.png'
-    },
-    {
-        id:4, image: './images/venedig4.png'
-    },
-    {
-        id:5, image: './images/venedig5.png'
-    },
-    {
-        id:6, image: './images/venedig6.png'
-    },
-    {
-        id:7, image: './images/venedig7.png'
-    }
-]
 
 // cycle trough
 
-const leftButton = document.querySelector('.button-left')
-const rightButton = document.querySelector('.button-right')
-const imagePlaceholder = document.querySelector('.image-content img')
+const pageType = document.body.getAttribute('data_page');
+const imageSet = imageSets[pageType];
 
-const counter = document.querySelector('.counter')
-let currentIndex = 0
+console.log(pageType)
 
-function updateImage () {
-    const currentImage = imageSetVenedig[currentIndex]
-    imagePlaceholder.src = currentImage.image
-    counter.textContent = `${currentImage.id}/${imageSetVenedig.length}`
+if (!imageSet) {
+    console.error("Invalid page type or no matching image set found!");
+} else {
+    // Initialize variables
+    const leftButton = document.querySelector('.button-left');
+    const rightButton = document.querySelector('.button-right');
+    const imagePlaceholder = document.querySelector('.image-content img');
+    const counter = document.querySelector('.counter');
+    let currentIndex = 0;
+
+    function updateImage() {
+        const currentImage = imageSet[currentIndex];
+        imagePlaceholder.src = currentImage.image;
+        counter.textContent = `${currentImage.id}/${imageSet.length}`;
+    }
+
+    leftButton.addEventListener('click', () => {
+        if (currentIndex > 0) { 
+            currentIndex--;
+            updateImage();
+        }
+    });
+
+    rightButton.addEventListener('click', () => {
+        if (currentIndex < imageSet.length - 1) {
+            currentIndex++;
+            updateImage();
+        }
+    });
+
+    updateImage();
 }
-
-leftButton.addEventListener('click', () => {
-    if (currentIndex > 0) { 
-        currentIndex--;
-        updateImage();
-    }
-});
-
-rightButton.addEventListener('click', () => {
-    if (currentIndex < imageSetVenedig.length - 1) {
-        currentIndex++;
-        updateImage();
-    }
-});
-
-updateImage()
