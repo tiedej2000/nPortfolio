@@ -1,24 +1,3 @@
-// dark mode
-
-const darkModeButton = document.querySelector('#toggle-dark-mode')
-const body = document.body
-const header = document.querySelector('.name-tag img')
-
-let isDarkMode = false
-
-darkModeButton.addEventListener('click',() =>{
-    if(!isDarkMode){
-        body.classList.toggle('dark-mode')
-        header.src = './images/niki_header-dark.png'
-        isDarkMode = true
-    } else{
-        body.classList.toggle('dark-mode')
-        header.src = './images/niki_header.png'
-        isDarkMode = false
-    }
-    
-})
-
 // socials blur
 
 const socialsButton = document.querySelector('.socials-nav')
@@ -64,7 +43,7 @@ expandButton.addEventListener('click', () => {
     }   
 })
 
-// image content venedig
+// image content 
 const imageSets = {
     venedig: [
         { id: 1, image: './images/venedig1.png' },
@@ -91,6 +70,55 @@ const imageSets = {
         { id: 1, image: './images/tarnung1.png' },
         { id: 2, image: './images/tarnung2.png' }
     ],
+    untitled1:[
+        {id:1, image: './images/untitled1one.png' }
+    ],
+
+    spaeher: [
+        {id:1, image: './images/spaeher1.png' }
+    ],
+    untitled2:[
+        {id:1, image: './images/untitled2one.png' }
+    ],
+    gertrud:[
+        {id:1, image: './images/gertrud1.png' },
+        {id:2, image: './images/gertrud2.png' },
+    ],
+    untitled3:[
+        {id:1, image: './images/untitled3one.png' }
+    ],
+    nahezu:[
+        {id:1, image: './images/nahezu1.png' },
+        {id:2, image: './images/nahezu2.png' },
+        {id:3, image: './images/nahezu3.png' },
+    ],
+    recently:[
+        {id:1, image: './images/recently1.png' }
+    ],
+    portraits:[
+        {id:1, image: './images/portraits1.png' },
+        {id:2, image: './images/portraits2.png' },
+        {id:3, image: './images/portraits3.png' },
+    ],
+    schattengestalt:[
+        {id:1, image: './images/schattengestalt1.png' }
+    ],
+    werkschau:[
+        {id:1, image: './images/werkschau1.png' },
+        {id:2, image: './images/werkschau2.png' },
+        {id:3, image: './images/werkschau3.png' },
+    ],
+    licht:[
+        {id:1, image: './images/licht1.png' },
+        {id:2, image: './images/licht2.png' },
+        {id:3, image: './images/licht3.png' },
+        {id:4, image: './images/licht4.png' },
+        {id:5, image: './images/licht5.png' },
+        {id:6, image: './images/licht6.png' },
+        {id:7, image: './images/licht.png' },
+    ],
+    
+
 };
 
 
@@ -98,8 +126,6 @@ const imageSets = {
 
 const pageType = document.body.getAttribute('data_page');
 const imageSet = imageSets[pageType];
-
-console.log(pageType)
 
 if (!imageSet) {
     console.error("Invalid page type or no matching image set found!");
@@ -133,3 +159,31 @@ if (!imageSet) {
 
     updateImage();
 }
+
+
+// dark mode
+const darkModeButton = document.querySelector('#toggle-dark-mode');
+const body = document.body;
+const header = document.querySelector('.name-tag img');
+
+let isDarkMode = false;
+
+if (localStorage.getItem('darkMode') === 'true') {
+    body.classList.add('dark-mode');
+    header.src = './images/niki_header-dark.png';
+    isDarkMode = true;
+}
+
+darkModeButton.addEventListener('click', () => {
+    isDarkMode = !isDarkMode;
+
+    if (isDarkMode) {
+        body.classList.add('dark-mode');
+        header.src = './images/niki_header-dark.png';
+    } else {
+        body.classList.remove('dark-mode');
+        header.src = './images/niki_header.png';
+    }
+
+    localStorage.setItem('darkMode', isDarkMode);
+});

@@ -12,7 +12,7 @@ const imageSet2 = [
     { element: document.querySelector('#portrait'), image: './images/portrait.png' },
     { element: document.querySelector('#schattengestalt'), image: './images/schattengestalt.png' },
     { element: document.querySelector('#werkschau'), image: './images/werkschau.png' },
-    { element: document.querySelector('#strasbourg'), image: './images/strasbourg.png' }
+    { element: document.querySelector('#licht'), image: './images/licht.png' }
 ];
 
 const placeHolder = document.querySelector('.image-placeholder img');
@@ -134,25 +134,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // dark mode
+const darkModeButton = document.querySelector('#toggle-dark-mode');
+const body = document.body;
+const header = document.querySelector('.name-tag img');
 
-const darkModeButton = document.querySelector('#toggle-dark-mode')
-const body = document.body
-const header = document.querySelector('.name-tag img')
+let isDarkMode = false;
 
-let isDarkMode = false
+if (localStorage.getItem('darkMode') === 'true') {
+    body.classList.add('dark-mode');
+    header.src = './images/niki_header-dark.png';
+    isDarkMode = true;
+}
 
-darkModeButton.addEventListener('click',() =>{
-    if(!isDarkMode){
-        body.classList.toggle('dark-mode')
-        header.src = './images/niki_header-dark.png'
-        isDarkMode = true
-    } else{
-        body.classList.toggle('dark-mode')
-        header.src = './images/niki_header.png'
-        isDarkMode = false
+darkModeButton.addEventListener('click', () => {
+    isDarkMode = !isDarkMode;
+
+    if (isDarkMode) {
+        body.classList.add('dark-mode');
+        header.src = './images/niki_header-dark.png';
+    } else {
+        body.classList.remove('dark-mode');
+        header.src = './images/niki_header.png';
     }
-    
-})
+
+    localStorage.setItem('darkMode', isDarkMode);
+});
 
 // socials blur
 
