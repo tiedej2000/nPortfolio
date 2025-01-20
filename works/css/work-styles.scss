@@ -150,6 +150,7 @@ li{
         visibility: hidden;
         max-width: 15vw;
         font-size: clamp(0.4rem, 0.6vw, 0.8rem);
+        color: var(--black);
     }
 
     .description.active{
