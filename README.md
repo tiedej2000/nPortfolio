@@ -5,6 +5,8 @@
 
 to do 
 
-works
+rest of the work sites
 
-dark mode overhaul
+fix dark mode description color
+
+add social media links
